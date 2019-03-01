@@ -1,0 +1,19 @@
+.accordion-item {
+  display: flex;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-info-details {
+  display: flex;
+  width: 800px;
+  height: 200px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.user-info-property {
+  font-weight: bold;
+}
