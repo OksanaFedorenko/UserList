@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 
 import './accordion-item.css';
@@ -30,4 +30,4 @@ const AccordionItem = () => {
   )
 };
 
-export default AccordionItem;
+export default AccordionItem;*/

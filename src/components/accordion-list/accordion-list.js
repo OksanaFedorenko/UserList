@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import RandomUserService from '../../services/randomuser-service';
@@ -10,7 +10,7 @@ export default class AccordionList extends Component {
 
   /*randomuser = new RandomUserService();*/
 
-  state = {
+ /* state = {
     user: {}
   };
 
@@ -20,7 +20,7 @@ export default class AccordionList extends Component {
       this.updatePeople();
   }*/
 
-  constructor() {
+ /* constructor() {
     super();
     this.updatePeople();
   }
@@ -51,7 +51,7 @@ export default class AccordionList extends Component {
           <li>{phone}</li>
           <li>{location.state}</li>
         </ul>
-       {/* Сюда подставить псевдоэлемент с плюсом */}
+       {/* Сюда подставить псевдоэлемент с плюсом *//*}
       </div>
     )
   }

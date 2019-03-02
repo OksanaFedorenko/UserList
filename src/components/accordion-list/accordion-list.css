@@ -1,8 +1,8 @@
-.accordion-list {
+/*.accordion-list {
   width: 1200px;
   height: 60px;
   background: lightgrey; /*change colour later*/
-  color: #000;
+ /* color: #000;
   position: relative;
   display: flex;
 }
@@ -25,7 +25,7 @@
   border-radius: 50%;
 }
                                   /* Проверить цсс*/
- .user-img-small img {
+ /*.user-img-small img {
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -43,4 +43,4 @@
   font-size: 30px;
   font-weight: bold;
   transition: 0.3s ease-in-out;
-}
+}*/

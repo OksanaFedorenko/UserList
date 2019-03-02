@@ -1,6 +1,6 @@
 
 
-export default class RandomUserService {
+/*export default class RandomUserService {
 
   _apiBase = 'https://randomuser.me/api';
 

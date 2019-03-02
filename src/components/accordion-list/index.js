@@ -1,3 +1,3 @@
-import AccordionList from './accordion-list';
+/*import AccordionList from './accordion-list';
 
-export default AccordionList;
+export default AccordionList;*/
