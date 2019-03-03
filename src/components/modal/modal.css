@@ -1,0 +1,22 @@
+.show-chart-btn {
+  width: 200px;
+  height: 40px;
+  background-color: #A8BAE2;
+  border: 2px solid #A8BAE2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.show-chart-btn:hover {
+  background-color: #7C92E2;
+  color: white;
+  transition: all .3s ease-in-out;
+}
+
+.styles_modal__gNwvD {
+  width: 700px;
+}
+
+.styles_modal__gNwvD h2 {
+  text-align: center;
+}
