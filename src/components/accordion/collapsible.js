@@ -1,13 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Collapsible extends React.Component {
+export default class Collapsible extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      isExpanded: false,
+  state = {
+    isExpanded: false,
   }
-}
 
   handleToggle(e) {
     e.preventDefault();
@@ -27,7 +24,7 @@ export default class Collapsible extends React.Component {
     return (
       <div className={`panel ${isExpanded ? 'is-expanded' : ''}`} onClick={(e) => this.handleToggle(e)}>
         <div className="panel-heading">
-          <div className="img-small"><img src={title[0]} alt=""/></div>
+          <div className="img-small"><img src={title[0]} alt="userphoto"/></div>
           <span>{title[2]}</span>
           <span>{title[1]}</span>
           <span>{title[3]}</span>

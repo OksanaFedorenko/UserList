@@ -1,61 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Collapsible from './collapsible';
-
+import RandomUserService from './../../services/randomuser-service';
 import './accordion.css';
 
-export default class Accordion extends React.Component {
+export default class Accordion extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      users: []
-    }
+  randomUserService = new RandomUserService();
+
+  state = {
+    isLoading: true,
+    users: []
   }
-
-  componentDidMount() {
-     this.fetchData();
-  }
-
-  fetchData() {
-    
-    fetch('https://randomuser.me/api/?results=20')
-    .then(response => response.json())
-    .then(parsedJSON => parsedJSON.results.map(user => (
-      {
-        gender: `${user.gender}`,
-        firstName: `${user.name.first}`,
-        lastName: `${user.name.last}`,
-        username: `${user.login.username}`,
-        registered: `${user.registered.date}`,
-        email: `${user.email}`,
-        street: `${user.location.street}`,
-        city: `${user.location.city}`,
-        postcode: `${user.location.postcode}`,
-        state: `${user.location.state}`,
-        birthday: `${user.dob.date}`,
-        phone: `${user.phone}`,
-        cell: `${user.cell}`,
-        pictureSmall: `${user.picture.thumbnail}`,
-        pictureLarge: `${user.picture.large}`
-      }
-    )))
-    .then(users => this.setState({
-      users,
-      isLoading: false
-    }))
-    .catch(error => console.log('parsing failed', error))
-
-  }
-
   
-
+  componentDidMount() {
+     this.randomUserService
+     .getAllPeople()
+     .then((users) => {
+       console.log(users);
+       this.setState({
+         users,
+         isLoading: false
+       });
+     });
+  }
 
   render() {
 
     const {isLoading, users} = this.state;
-     
-
+    
     return (
       <div>
         <div className={`content ${isLoading ? 'is-loading' : ''}`}>
@@ -84,7 +56,6 @@ export default class Accordion extends React.Component {
 
                 const title = [pictureSmall, firstName, lastName, username, phone, state];
               
-                
                 const genderIcon = (gender === "male") ? <i className="fas fa-male"></i> : <i className="fas fa-female"></i>;
                
                 return <Collapsible key={username} title={title}>
@@ -121,6 +92,6 @@ export default class Accordion extends React.Component {
         </div>
       </div>
     );
-  }
-}
-
+  };
+};
+  
