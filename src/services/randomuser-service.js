@@ -21,31 +21,41 @@ export default class RandomUserService {
     
   }
 
-  _transformUser(user) {
+  _transformUser = (user) => {
     return {
-      /*id: user.id,
-      picture: user.picture,
-      name: user.name,
-      login: user.login,
-      phone: user.phone,
-      location: user.location*/
       gender: `${user.gender}`,
       firstName: `${user.name.first}`,
       lastName: `${user.name.last}`,
       username: `${user.login.username}`,
-      registered: `${user.registered.date}`,
+      registered: `${this._formatDate(user.registered.date)}`,
       email: `${user.email}`,
-      street: `${user.location.street}`,
+      street: `${user.location.street.name} ${user.location.street.number}`,
       city: `${user.location.city}`,
       postcode: `${user.location.postcode}`,
       state: `${user.location.state}`,
-      birthday: `${user.dob.date}`,
+      birthday: `${this._formatDate(user.dob.date)}`,
       phone: `${user.phone}`,
       cell: `${user.cell}`,
       pictureSmall: `${user.picture.thumbnail}`,
       pictureLarge: `${user.picture.large}`
      }
     }
+
+    _formatDate(date) {
+
+      const fullDate = new Date(date);
+
+      let day = fullDate.getDate();
+      if (day < 10) day = '0' + day;
+
+      let month = fullDate.getMonth() + 1;
+      if (month < 10) month = '0' + month;
+    
+      let year = fullDate.getFullYear();
+ 
+      return day + '/' + month + '/' + year;
+    }
+    
     
 }
 
